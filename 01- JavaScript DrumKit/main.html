@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link href="style.css" rel="stylesheet" />
+
+</head>
+
+<script type="text/javascript">
+
+var song;
+
+onLoadInit();
+
+function onLoadInit()
+{
+	        window.addEventListener('keydown', handleKeyDown, false);
+	        window.addEventListener('keyup', handleKeyUp, false);
+	
+}
+
+function functionMouseOver( li_id)
+{
+
+	        var li_element= document.getElementById(li_id);
+	        li_element.classList.add("playing");
+  	            
+            var audio_element= li_element.querySelectorAll(".myAudio");
+            var audio_sound_path=audio_element[0].getAttribute('id');
+
+	        audio_sound= document.getElementById(audio_sound_path);
+	        audio_sound.currentTime = 0;
+	        audio_sound.play();
+		    
+}
+  function remove_trans(li_id)
+  {
+            var theLIElem = document.getElementById(li_id);
+	        theLIElem.classList.remove("playing");  
+
+  }
+
+
+function handleKeyDown(evt)
+{
+		
+			if(evt.keyCode == 81) functionMouseOver( "boom_li");
+			if(evt.keyCode == 83) functionMouseOver( "hithat_li");
+			if(evt.keyCode == 68) functionMouseOver( "clap_li");
+			if(evt.keyCode == 70) functionMouseOver( "drum_li");
+			if(evt.keyCode == 71) functionMouseOver( "kick_li");
+			if(evt.keyCode == 72) functionMouseOver( "ride_li");
+			if(evt.keyCode == 74) functionMouseOver( "snare_li");
+			if(evt.keyCode == 75) functionMouseOver( "tink_li");
+			if(evt.keyCode == 76) functionMouseOver( "tom_li");
+
+}
+
+function handleKeyUp(evt)
+{
+		   if (evt.keyCode == 81) remove_trans( "boom_li");
+		   if (evt.keyCode == 83) remove_trans( "hithat_li");
+		   if (evt.keyCode == 68) remove_trans( "clap_li");
+		   if (evt.keyCode == 70) remove_trans( "drum_li");
+		   if (evt.keyCode == 71) remove_trans( "kick_li");
+		   if (evt.keyCode == 72) remove_trans( "ride_li");
+		   if (evt.keyCode == 74) remove_trans( "snare_li");
+		   if (evt.keyCode == 75) remove_trans( "tink_li");
+		   if (evt.keyCode == 76) remove_trans( "tom_li");
+}
+
+
+</script>
+
+
+<body > 
+
+
+	
+
+
+		<div  class="container" >
+			
+				<ul class="Keys-flex-container nowrap" >
+					
+					<!--****************************1************************-->
+
+					<li class="flex-item " id="boom_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)">                        Q 	
+					     
+					     <span class="flex-SubItem"> <br />  BOOM </span> 
+
+					     <audio id="bomm_sound" class="myAudio " src= 'sound-effects/boom.mp3' type="audio/mpeg"> </audio>
+	     
+					</li>
+					<!--**************************2**************************-->
+				     <li class="flex-item " id="hithat_li"  onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)" > 
+				                		S 	
+				     <span class="flex-SubItem"> <br />  HITHAT </span> 
+
+				     <audio id="hithat_sound" class="myAudio "  src="sound-effects/hithat.mp3"  type="audio/mpeg"></audio>
+					
+					 </li>
+					 <!--*************************3***************************-->
+					
+					<li class="flex-item" id="clap_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)"> 
+										D 	
+					<span span class="flex-SubItem"> <br />  CLAP </span> 
+
+					<audio id="clap_sound"  class="myAudio " src="sound-effects/clap.mp3"  type="audio/mpeg"></audio>
+					
+					</li>
+					<!--**************************4**************************-->
+					<li class="flex-item " id="drum_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)"> 
+										F 	
+					<span span class="flex-SubItem"> <br />  DRUM </span> 
+
+					<audio id="drum_sound" class="myAudio " src="sound-effects/drum.mp3"  type="audio/mpeg"></audio>
+					
+					</li>
+					<!--**************************5**************************-->
+					<li class="flex-item" id="kick_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)">
+					 					G	
+					 <span span class="flex-SubItem"> <br />  KICK </span>
+
+					 <audio id="kick_sound" class="myAudio " src="sound-effects/kick.mp3" type="audio/mpeg"></audio>
+					
+					</li>
+					<!--**************************6**************************-->
+					<li class="flex-item" id="ride_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)"> 
+										H	
+					<span span class="flex-SubItem"> <br />  RIDE </span> 
+
+					<audio id="ride_sound" class="myAudio " src="sound-effects/ride.mp3"  type="audio/mpeg"></audio>
+					
+					</li>
+					<!--**************************7**************************-->
+					<li class="flex-item" id="snare_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)"> 
+										J 	
+                    <span span class="flex-SubItem"> <br />  SNARE </span>
+
+					<audio id="snare_sound"  class="myAudio " src="sound-effects/snare.mp3" type="audio/mpeg"></audio>
+					
+					</li>
+					<!--************************8****************************-->
+					<li class="flex-item" id="tink_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)"> 
+										K 	
+					<span span class="flex-SubItem"> <br />  TINK </span> 
+
+					<audio id="tink_sound" class="myAudio " src="sound-effects/tink.mp3"  type="audio/mpeg"></audio>
+					
+					</li>
+					<!--************************9****************************-->
+					<li class="flex-item" id="tom_li" onmouseover="functionMouseOver(this.id)" onmouseout="remove_trans(this.id)">
+					 				L 	
+					<span class="flex-SubItem"> <br />  TOM </span> 
+					 
+					<audio id="tom_sound" class="myAudio " src="sound-effects/tom.mp3"  type="audio/mpeg"></audio>
+					
+					</li> 
+			
+
+				</ul>
+
+		</div>
+
+
+
+</body>
+</html>

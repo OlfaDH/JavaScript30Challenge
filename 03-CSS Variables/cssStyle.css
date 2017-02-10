@@ -1,0 +1,44 @@
+html{
+margin: *;
+height: 100%; 
+overflow: hidden;
+--spacing : 10px; 
+--bluring: 10px;
+--base_color: yellow;
+
+}
+
+
+body{ 
+ background-color: black;
+ background-position: absolute;
+ font-family: 'serif';
+ font-weight: 100;
+ font-size: 30px;
+ color: white
+}
+
+#js{
+	color: var(--base_color);
+}
+ 
+
+label{
+	font-size: 30px;
+	
+	padding-left: 162px;
+}
+
+.adjust{
+padding-top: 5px;
+padding-bottom: 50px;
+
+}
+
+.my_img{
+ 
+ padding: var(--spacing);
+ background: var(--base_color);
+ filter: blur(var(--bluring));
+
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cssStyle.css">
+
+</head>
+<body>
+
+<div class="container">
+	
+	<div>
+		<h2 align="center"> Updating CSS Variables With  <br /><span id="js">JAVASCRIPT </span></h2>
+
+	</div>
+		
+			<div class="adjust" align="left ">
+			      <label>Spacing : </label> 
+			      <input name="spacing" type="range" min="10" max="200" value="10" data-sizing= "px">
+			
+			     
+			
+			      <label> Blur : </label>
+			      <input name="bluring" type="range" min="0" max="25" value="10" data-sizing="px">
+				
+			      <label> Base Color : </label>
+				 <input type="color" name="base_color" value="#ffc600" >
+				
+			</div>
+			
+			
+				<div  align="center">
+				 <img class="my_img" src="nature2.jpg" >
+					
+				</div>
+
+		
+        
+ 
+</div>
+
+
+
+
+
+
+</body>
+
+
+<script type="text/javascript">
+
+/* i wil get all the input elements*/
+const inputs=document.querySelectorAll('.adjust input');
+
+function space_Adjust(){
+
+
+
+const suffixe= this.dataset.sizing || '';
+
+/*document.body.style.setProperty(this.name, this.value + suffixe);*/
+
+document.documentElement.style.setProperty("--"+this.name, this.value + suffixe);
+
+
+
+
+}
+
+
+inputs.forEach(input => input.addEventListener('change',space_Adjust) );
+ 
+inputs.forEach(input => input.addEventListener('mousemove', space_Adjust));
+
+
+
+
+</script>
+</html>

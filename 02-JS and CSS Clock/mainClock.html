@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+   
+        <div class="date_Box" id="currentDateBox"> </div>
+		<div class="round_shape">
+		   <div class="indicators indicator_rotate hour" id="hours_indicator" style="width:100px; height: 7px;background-color: black"></div>
+		   <div class="indicators indicator_rotate" id="minutes_indicator" style="width:130px; height: 7px;background-color: black"></div>
+		   <div class="indicators indicator_rotate" id="seconds_indicator" style="width:150px; height: 3px; background-color: black"> </div>
+			
+	    </div>
+
+</div>
+
+</body>
+
+
+
+
+<script type="text/javascript">
+		
+	const element_seconds_indicator= document.getElementById('seconds_indicator');
+	const element_minutes_indicator= document.getElementById('minutes_indicator');
+    const element_hours_indicator= document.getElementById('hours_indicator');
+
+	window.onload =myClock;
+	setInterval(function(){myClock()},1000);
+    setInterval(function(){ date_Box() });
+
+function myClock()
+{
+
+	const d= new Date();
+	
+	const seconds= d.getSeconds();
+    const secondsDegee= ( (seconds/ 60) * 360 ) -90;
+    element_seconds_indicator.style.transform="rotate("+secondsDegee+"deg)";
+   
+	const minutes= d.getMinutes();
+	const minutesDegree= (( minutes/ 60) * 360)-90;
+	element_minutes_indicator.style.transform="rotate("+minutesDegree+"deg)";
+	
+    const hours= d.getHours();
+	const hoursDegree= ((hours/ 12) * 360) -90 ;  
+	element_hours_indicator.style.transform="rotate("+hoursDegree+"deg)";
+
+}
+
+function date_Box() {
+	
+	var d= new Date;
+	var t = d.toLocaleTimeString();
+    document.getElementById("currentDateBox").innerHTML = t;
+}
+
+</script>
+</html>
